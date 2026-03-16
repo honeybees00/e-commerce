@@ -1,11 +1,15 @@
-import { defineConfig } from 'vite'
-import tailwindcss from '@tailwindcss/vite'
+
 import './App.css'
-import { BrowserRouter,Router,Route } from 'react-router-dom'
+import { BrowserRouter,Router,Route,Routes } from 'react-router-dom'
 import { Login } from './Pages/Login'
 import { Task } from './Pages/Task'
 import { TaskDetail } from './Pages/TaskDetail'
 import { Error } from './Pages/Error'
+import { Products } from './Pages/Products'
+import { CheckOut } from './Pages/CheckOut'
+import {Home} from './Pages/Home'
+import {Nav} from './Components/Nav'
+
 
 
 
@@ -18,34 +22,35 @@ function App() {
 
   return (
     <>
+    <Nav/>
     <BrowserRouter>
-    <Route>
-      <Route path='/'element={<Login/>}>
-      <Route path='/'Task element={<Task/>}/>
-      <Route path='/' dashboard element={<Login/>}>
+    <Routes>
+      <Routes path='/'element={<Home/>}/>
+      <Route path='/products' element={<Products/>}/>
+      <Route path='/checkout'  element={<CheckOut/>}/>
       <Route path='/Task/:id' element={<TaskDetail/>}/>
-      </Route>
-    </Route>
+      </Routes>
+    
     </BrowserRouter>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
     </>
+)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
   
 
 
@@ -56,7 +61,4 @@ function App() {
 
 
 
-export default defineConfig({
-	plugins: [tailwindcss()],
-});
-
+export default App;
