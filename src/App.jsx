@@ -31,7 +31,7 @@ function App() {
       <Route path='/Task/:id' element={<TaskDetail/>}/>
       </Routes>
     
-    </BrowserRouter>
+    </BrowserRouter> 
     </>
 )}
 
